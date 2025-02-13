@@ -1,0 +1,14 @@
+Instead of using a complex selector within the `@apply` directive, create a dedicated utility class or refactor the CSS rules in a more manageable way.  Here's an example:
+
+```css
+/* bugSolution.css */
+@layer components {
+  .card {
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+  }
+}
+
+/* ...rest of your styles... */
+```
+
+By creating a dedicated `.card` class, you encapsulate all relevant styling and avoid the potential conflicts of `@apply` within a complex selector inside the `@layer` directive. Alternatively, evaluate if using an `@layer` is absolutely necessary in the particular use case.  If not, you can remove it and directly apply the styles without any issues.
